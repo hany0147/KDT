@@ -1,15 +1,4 @@
-# 파이썬 3일차
-## 반복문
-### While
-- `종료 조건`에 해당하는 코드를 통해 반복문을 `종료시켜야 함`.
-- 조건식이 `참인 경우` `반복`적으로 코드 실행
-> 종료 조건을 꼭 심어 놔야 한다.
-```python
-While <expression>:
-    # code block
-```
-
-## 함수(Fuction)
+# 함수(Fuction)
 `input -> output`
 
 `함수도` 그 자체로 `객체`이다. 
@@ -19,7 +8,7 @@ Why use?
 - decomposion(분해): 기능 분해
 - 코드 중복 방지, 재사용 용이함
 
-### 내장 함수
+## 내장 함수
 - 구글에 '파이썬 내장함수' 검색하면 나옴
 > ex) print(), len(), sum(), max(), min(), abs(x), divmod(a, b), sorted() 등등
 - `map(function, iterable)`

@@ -6,9 +6,11 @@ dict_variable['거주지'] = input('거주지를 입력하세요 > ')
 
 print(dict_variable)
 
+# 방법1
 for key, value in dict_variable.items():
     print(f'{key} : {value}')
-
+    
+# 방법2
 for key in dict_variable:
     print(f'{key} : {dict_variable[key]}')
 

@@ -1,4 +1,4 @@
-# GIT 1일차
+# Git & Github
 
 ## CLI
 `Command Line Interface`의 약자로, `명령어 기반`의 인터페이스이다.
@@ -29,4 +29,8 @@
   - 버전 확인: `git log`
 
   - 기타: `git log -1`(최근 1개의 기록 확인), `git log --oneline`(한줄로 기록 확인), `git log -2 --oneline`(최근 2개의 기록을 한 줄로 확인)
+
+## Github
+원격 저장소
+
 
