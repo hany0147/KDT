@@ -51,6 +51,17 @@
 - `~~`을 사용한다.
 > `~~최악~~` ,~~최악~~
 
+## 이모지 사용법
+- window 키 + .
+> 😀
+
+<br>
+
+---
 ---
 
->참고문헌: [마크다운 가이드](https://www.markdownguide.org/cheat-sheet/)
+<br>
+
+>참고 사이트 <br>
+[마크다운 가이드](https://www.markdownguide.org/cheat-sheet/) <br>
+[마크다운 작성법](https://velog.io/@gillog/MarkDown-%EC%9E%91%EC%84%B1%EB%B2%95)

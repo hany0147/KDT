@@ -1,4 +1,4 @@
-# # SQL 기초
+# SQL 기초
 
 ## 1. SQL 
 - Structure Query Language

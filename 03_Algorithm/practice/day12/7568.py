@@ -37,8 +37,10 @@ for num, people in people_dict.items():
     fin_dict[num] = cnt 
 print(*fin_dict.values())
 
-
 # 출력을 어떻게 할 것인가?
+
+
+
 
 
 ## 동료코드
