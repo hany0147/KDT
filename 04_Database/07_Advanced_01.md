@@ -1,4 +1,4 @@
-# SQL 심화
+# SQL 심화 1편
 ## 1. Transactions
 - 여러 쿼리문을 묶어서 하나의 작업처럼 처리하는 방법
 - 다 성공하던가 다 실패하던가 해야함(All or Nothing)
