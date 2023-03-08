@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1</title>
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  .card {
+    width: 1000px;
+    height: 300px;
+    border: 1px solid black;
+    display: flex;
+  }
+
+  .card__imgBox {
+    height: 300px;
+    position: relative;
+    flex-basis: 45%;
+  }
+
+  .card__imgBox__item1 {
+    height: 100%;
+  }
+
+  .card__imgBox__item2 {
+    position: absolute;
+    width: 20%;
+    top: 0;
+    right: 0;
+  }
+
+  .card__content {
+    flex-basis: 55%;
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    height: 300px;
+  }
+
+  .card__content__header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+  }
+
+
+  .card__content__name {
+    margin: 0;
+  }
+
+  .card__content__name-none {
+    font-size: 30px;
+  }
+
+  .card__content__job {
+    align-self: center;
+    margin: 0;
+  }
+  .card__content__description-font {
+    font-weight: bold;
+  }
+  .card__content__detail-font {
+    font-weight: bold;
+  }
+
+  .card__content_detail__item {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+</style>
+<body>
+  <main class="card">
+    <article class="card__imgBox">
+      <img class="card__imgBox__item1" src="05_Flex_Advanced/01.jpg" alt="팀 버너스리">
+      <img class="card__imgBox__item2" src="05_Flex_Advanced/02.png" alt="영국 국기">
+    </article>
+    <article class="card__content">
+      <section class="card__content__header">
+        <h1 class="card__content__name card__content__name-none">팀 버너스리</h1>
+        <h3 class="card__content__job">프로그래머</h3>
+      </section>
+      <section class="card__content__description-font">
+        <p>1989년 월드 와이드 웹의 하이퍼텍스트 시스템을 고안하여 개발. 웹의 아버지</p>
+      </section>
+      <section class="card__content__detail-font">
+        <section class="card__content_detail__item">
+          <div>국적</div>
+          <div>영국</div>
+        </section>
+        <section class="card__content_detail__item">
+          <div>생년월일</div>
+          <div>1955년 6월 8일</div>
+        </section>
+        <section class="card__content_detail__item">
+          <div>직업</div>
+          <div>전산과학자, 프로그래머, 교수</div>
+        </section>
+        <section class="card__content_detail__item">
+          <div>출신 대학</div>
+          <div>옥스퍼드 대학교 물리학 학사</div>
+        </section>
+        <section class="card__content_detail__item">
+          <div>추가정보</div>
+          <div><a href="https://ko.wikipedia.org/wiki/팀_버너스리">https://ko.wikipedia.org/wiki/팀_버너스리</a></div>
+        </section>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

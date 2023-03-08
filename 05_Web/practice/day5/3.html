@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3</title>
+  <style>
+
+    @font-face {
+      font-family: 'LINESeedKR-Bd';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+    }
+    * {
+      box-sizing: border-box;
+    }
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      min-width: 400px;
+    }
+
+    .box__header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 100px;
+    }
+
+    .box__header-shape {
+      border-bottom: black solid 3px;
+      height: 80px;
+      padding-bottom: 10px;
+    }
+
+    .box__header__logo {
+      width: 15em;
+    }
+    .box__header__name {
+      margin: 0;
+      align-self: center;
+    }
+
+    .box__header__name-font {
+      font-family: 'LINESeedKR-Bd';
+      font-weight: bold;
+      font-size: 30px;
+    }
+
+    .box__section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-content: center;
+    }
+
+    .section__item {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: space-evenly;
+      flex-basis: 400px;
+    }
+
+    p {
+      align-self: center;
+      font-family: 'LINESeedKR-Bd';
+      font-size: 20px;
+    }
+
+    .section__item-detail {
+      margin-bottom: 5px;
+    }
+
+    .section__item__icon {
+      height: 100px;
+      width: 80px;
+      align-self: center;
+    }
+
+    h2 {
+      align-self: center;
+    }
+
+
+  </style>
+</head>
+<body>
+  <main class="box">
+      <header class="box__header box__header-shape">
+        <img class="box__header__logo" src="05_Flex_Advanced/04.png" alt="하이퍼그로스 로고">
+        <h3 class="box__header__name box__header__name-font">Hyper S23</h3>
+      </header>
+      <section class="box__section">
+        <section class="section__item">
+          <h2>하이퍼 S23 Super</h2>
+          <img class="section__item__icon" src="https://images.samsung.com/sec/smartphones/galaxy-s23/compare/images/galaxy-s23-compare-display-icon.png" alt="휴대폰 아이콘">
+          <p>몰입형 게임 최적화</p>
+          <p>
+            <p class="section__item-detail">화면 크기</p>
+            <p class="section__item-detail">173.1 mm</p>
+          </p>
+          <p>
+            <p class="section__item-detail">3,088 * 1,440</p>
+            <p class="section__item-detail">(Quad HD+ 엣지 디스플레이)</p>
+          </p>
+          <p>
+            <p class="section__item-detail">최대 밝기</p>
+            <p class="section__item-detail">1,750 니트</p>
+          </p>
+          <p>
+            <p class="section__item-detail">가변주사율</p>
+            <p class="section__item-detail">1~120 Hz</p>
+          </p>
+        </section>
+        <section class="section__item">
+          <h2>하이퍼 S23+</h2>
+          <img class="section__item__icon" src="https://images.samsung.com/sec/smartphones/galaxy-s23/compare/images/galaxy-s23-compare-display-icon.png" alt="휴대폰 아이콘">
+          <p>야외에서도 뛰어난 선명도</p>
+          <p>
+            <p class="section__item-detail">화면 크기</p>
+            <p class="section__item-detail">166.5 mm</p>
+          </p>
+          <p>
+            <p class="section__item-detail">2,340 * 1,080</p>
+            <p class="section__item-detail">(FHD+ 플랫 디스플레이)</p>
+          </p>
+          <p>
+            <p class="section__item-detail">최대 밝기</p>
+            <p class="section__item-detail">1,750 니트</p>
+          </p>
+          <p>
+            <p class="section__item-detail">가변주사율</p>
+            <p class="section__item-detail">48~120 Hz</p>
+          </p>
+        </section>
+        <section class="section__item">
+          <h2>하이퍼 S23</h2>
+          <img class="section__item__icon" src="https://images.samsung.com/sec/smartphones/galaxy-s23/compare/images/galaxy-s23-compare-display-icon.png" alt="휴대폰 아이콘">
+          <p>야외에서도 뛰어난 선명도</p>
+          <p>
+            <p class="section__item-detail">화면 크기</p>
+            <p class="section__item-detail">153.9 mm</p>
+          </p>
+          <p>
+            <p class="section__item-detail">2,340 * 1,080</p>
+            <p class="section__item-detail">(FHD+ 플랫 디스플레이)</p>
+          </p>
+          <p>
+            <p class="section__item-detail">최대 밝기</p>
+            <p class="section__item-detail">1,750 니트</p>
+          </p>
+          <p>
+            <p class="section__item-detail">가변주사율</p>
+            <p class="section__item-detail">48~120 Hz</p>
+          </p>
+        </section>
+      </section>
+    </a>
+  </main>
+</body>
+</html>
