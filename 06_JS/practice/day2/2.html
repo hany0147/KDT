@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+  <div id="original" class="container">
+    <div>
+      <div class="mb-3">
+        <label for="inputEmail" class="form-label">이메일</label>
+        <input type="email" class="form-control" id="inputEmail">
+      </div>
+      <div class="mb-3">
+        <label for="inputPassword" class="form-label">비밀번호</label>
+        <input type="password" class="form-control" id="inputPassword">
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-primary" role="submit">로그인</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="copy" class="container">
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
+<script>
+  // div#original 과 동일한 DOM 생성 후 div#copy 의 자식 요소로 추가
+  // 1. body 선택 태그 생성
+  const bodyTag = document.querySelector('body')
+  console.log(bodyTag)
+
+  // 2. div 생성 태그 생성
+  // 3. div 할당
+
+  const div0 = document.createElement('div')
+
+  const div1 = document.createElement('div')
+  div1.classList.add('mb-3')
+  
+  const div2 = document.createElement('div')
+  div2.classList.add('mb-3')
+  
+  const div3 = document.createElement('div')
+  div3.classList.add('mb-3')
+
+  // 4. label, input, btn 태그 생성
+  // 5. 각 개별 label, input 요소 생성 및 속성 부여
+  const label1 = document.createElement('label')
+  label1.setAttribute('for', 'inputEmail')
+  label1.setAttribute('class', 'form-label')
+  label1.textContent = '이메일'
+  
+  const label2 = document.createElement('label')
+  label2.setAttribute('for', 'inputPassword')
+  label2.setAttribute('class', 'form-label')
+  label2.textContent = '비밀번호'
+
+  const input1 = document.createElement('input')
+  input1.setAttribute('type', 'email')
+  input1.setAttribute('class', 'form-control')
+  input1.setAttribute('id', 'inputEmail')
+
+  const input2 = document.createElement('input')
+  input2.setAttribute('type', 'password')
+  input2.setAttribute('class', 'form-control')
+  input2.setAttribute('id', 'inputPassword')
+
+  const newBtn = document.createElement('button')
+  newBtn.classList.add('btn', 'btn-primary')
+  newBtn.setAttribute('role', 'submit')
+  newBtn.textContent = '로그인'
+
+  // 배치
+  const divCopy = document.querySelector('#copy')
+  console.log(divCopy)
+  divCopy.appendChild(div0)
+  
+  div0.appendChild(div1)
+  div0.appendChild(div2)
+  div0.appendChild(div3)
+  
+  div1.appendChild(label1)
+  div1.appendChild(input1)
+
+  div2.appendChild(label2)
+  div2.appendChild(input2)
+
+  div3.appendChild(newBtn)
+
+</script>
+
+</html>
