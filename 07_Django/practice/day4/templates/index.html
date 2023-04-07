@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>시작 페이지</h1>
+<ul>
+  <li><a href="{% url 'articles:throw' %}">Throw</a></li>
+  <li><a href="{% url 'nums:nums_index' %}">nums</a></li>
+</ul>
+{% endblock content %}

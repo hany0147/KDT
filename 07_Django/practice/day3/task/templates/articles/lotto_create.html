@@ -1,0 +1,12 @@
+{% extends 'articles/base.html' %}
+{% block content %}
+  <div class="container m-3">
+    <form action="/lotto/">
+      <div class="input-group mb-3">
+        <input type="text" name="lotto_nums"
+         class="form-control" placeholder="로또 생성수" aria-describedby="button-addon2">
+        <button type="submit" class="btn btn-outline-secondary" id="button-addon2">생성</button>
+      </div>
+    </form>
+  </div>
+{% endblock content %}

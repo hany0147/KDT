@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container m-5">
+  <h1>Index</h1>
+  <hr>
+  <h2><a href="{% url 'todos:create' %}">할 일 생성</a></h2>
+  <hr>
+  {% for todo in todos %}
+    <h2>글 번호: {{ todo.pk }}</h2>
+    <h2>글 제목: {{ todo.title }}</h2>
+    <h2>글 내용: {{ todo.content }}</h2>
+    <a type="button" class="btn btn-outline-secondary" href="{% url 'todos:detail' todo.pk %}">자세히 보기</a>
+    <hr>
+  {% endfor %}
+</div>
+
+{% endblock content %}

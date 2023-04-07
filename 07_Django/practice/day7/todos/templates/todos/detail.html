@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block style %}
+  <style>
+    h1 {
+      margin-bottom: 30px;
+    }
+    p {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+  </style>
+{% endblock style %}
+{% block content %}
+  <div class="container m-5">
+    <h1>상세 페이지 {{ todo.pk }}번</h1>
+    <p>제목 - {{ todo.title }}</p>
+    <p>내용 - {{ todo.content }}</p>
+    <p>우선순위 - {{ todo.priority }}</p>
+    <p>마감기한 - {{ todo.deadline }}</p>
+    <p>완료여부 - {{ todo.completed }}</p>
+  </div>
+{% endblock content %}

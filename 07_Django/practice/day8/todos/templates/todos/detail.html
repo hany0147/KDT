@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block style %}
+  <style>
+    li {
+      font-size: 25px;
+    }
+  </style>
+
+{% endblock style %}
+{% block content %}
+<div class="container m-5">
+  <h1>상세 페이지 {{ todo.pk }}번</h1>
+  <ul>
+    <li>제목: {{ todo.title }}</li>
+    <li>내용: {{ todo.content }}</li>
+    <li>우선 순위: {{ todo.priority }}</li>
+    <li>마감 기한: {{ todo.deadline }}</li>
+    <li>완료 여부: {{ todo.completed }}</li>
+  </ul>
+  <div class="row">
+    <div class="m-3 col-1">
+      <form action="{% url 'todos:edit' todo.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="수정">
+      </form>
+    </div>
+    <div class="m-3 col-1">
+      <form action="{% url 'todos:delete' todo.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="삭제">
+      </form>
+    </div>
+    <div class="m-3 col-2">
+      <button class="rounded border-1"><a class= "link-dark link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover" href="{% url 'todos:index' %}">뒤로 가기</a></button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}

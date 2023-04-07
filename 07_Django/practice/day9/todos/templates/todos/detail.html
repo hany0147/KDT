@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block style %}
+  <style>
+    li {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+  </style>
+{% endblock style %}
+{% block content %}
+  <div class="container m-5">
+    <h1>상세 페이지 {{ todo.pk }}번</h1>
+    <hr>
+    <ul>
+      <li>제목: {{ todo.title}}</li>
+      <li>내용: {{ todo.content }}</li>
+      <li>마감날짜: {{ todo.deadline }}</li>
+    </ul>
+    <hr>
+    <h4><a type="button" class="btn btn-success" href="{% url 'todos:update' todo.pk %}">수정</a></h4>
+    <h4><a type="button" class="btn btn-danger" href="{% url 'todos:delete' todo.pk %}">삭제</a></h4>
+    <h4><a type="button" class="btn btn-info" href="{% url 'todos:index' %}">뒤로 가기</a></h4>
+  </div>
+
+{% endblock content %}

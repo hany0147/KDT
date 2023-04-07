@@ -1,0 +1,21 @@
+{% extends 'articles/base.html' %}
+
+{% block style %}
+  <style>
+    span {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+  
+{% endblock style %}
+{% block content %}
+  <h3>오늘의 추천 저녁 메뉴는 <span>{{ foods }}</span>입니다, 부장님!</h3>
+  {% if foods in boojangnim %}
+    <h3>"껄껄껄! 이대리가 뭘 좀 아는 구만!"</h3>
+  {% else %}
+    <h3>"크흠... 나는 다른 게 좀 땡기는 데... 어떻게 생각하나 이대리?"</h3>
+  {% endif %}
+{% endblock content %}
+</body>
+</html>

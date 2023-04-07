@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container m-5">
+  <h1>Create</h1>
+  <hr>
+  <form action="{% url 'todos:create' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="제출">
+  </form>
+  <hr>
+  <a type="button" class="btn btn-secondary" href="{% url 'todos:index' %}">뒤로 가기</a>
+</div>
+
+{% endblock content %}
