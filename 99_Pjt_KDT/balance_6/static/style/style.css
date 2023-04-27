@@ -1,0 +1,19 @@
+#logo {
+  height: 2.5rem;
+}
+
+#github-logo {
+  height: 3rem;
+}
+
+/* #dev-logo {
+  height: 3rem;
+} */
+
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  border-top: 1px lightgray solid;
+}

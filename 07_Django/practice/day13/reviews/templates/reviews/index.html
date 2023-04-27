@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container m-5">
+  <h1>전체 조회</h1>
+  <a href="{% url 'reviews:create' %}">[리뷰 작성]</a>
+  <ul>
+    {% for review in reviews %}
+      <li>{{review.pk}} - <a href="{% url 'reviews:detail' review.pk %}">{{ review.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock content %}
+
+{% comment %} <ul>
+  {% for review in reviews %}
+    <li>후기 번호: {{ review.pk }}</li>
+    <li>후기 제목: {{ review.title }}</li>
+    <li>후기 내용: {{ review.content }}</li>
+    <li>영화 이름: {{ review.movie }}</li>
+  {% endfor %}
+</ul> {% endcomment %}

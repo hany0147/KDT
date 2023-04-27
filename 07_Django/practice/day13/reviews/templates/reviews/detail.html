@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container m-5">
+    <h1>Detail</h1>
+    <hr>
+    <ul class="list-unstyled">
+      <li>후기 번호: {{ review.pk }}</li>
+      <li>후기 제목: {{ review.title }}</li>
+      <li>
+        {% if review.image %}
+          <img src="{{ review.image_thumbnail.url }}" alt="">
+        {% endif %}
+      </li>
+      <li>후기 내용: {{ review.content }}</li>
+      <li>영화 이름: {{ review.movie }}</li>
+    </ul>
+    <a href="{% url 'reviews:index' %}">[back]</a>
+    <hr>
+    <h4 class="mb-3">댓글: {{ comments|length }}개</h4>
+    <ul class="list-unstyled">
+      {% for comment in comments %}
+        <li>댓글 번호: {{ comment.pk }}</li>
+        <li>댓글 내용: {{ comment.content }}</li>
+        <li>
+          <form action="{% url 'reviews:delete_comment' review.pk comment.pk %}" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="삭제">
+          </form>
+        </li>
+        <br>
+      {% empty %}
+        <li>댓글이 없습니다.</li>
+      {% endfor %}
+    </ul>
+    <hr>
+    <form action="{% url 'reviews:create_comment' review.pk %}" method="POST">
+      {% csrf_token %}
+      {{ comment_form }}
+      <input type="submit" value="댓글 생성">
+    </form>
+  </div>
+{% endblock content %}
+

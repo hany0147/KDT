@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container m-5">
+    <h1>회원가입</h1>
+    <hr>
+    <form action="{% url 'accounts:signup' %}" method="POST">
+      {% csrf_token %}
+      {% for field in form %}
+         <div class="input-group mb-3">
+            <span class="input-group-text" id="{{ field.auto_id }}">{{ field.label }}</span>
+            {{ field }}
+          </div>
+      {% endfor %}
+      <input type="submit" value="회원가입">
+    </form>
+  </div>
+{% endblock content %}
+{% block c1 %}
+  {{ all_count }}
+{% endblock c1 %}
+{% block c2 %}
+  {{ dev_count }}
+{% endblock c2 %}
+{% block c3 %}
+  {{ cs_count }}
+{% endblock c3 %}
+{% block c4 %}
+  {{ newT_count }}
+{% endblock c4 %}

@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block style %}
+  li {
+    list-style: none;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .table>:not(caption)>*>* {
+    padding: 1rem 0.5rem;
+  }
+
+  .post-num {
+    font-size: 0.875rem;
+  }
+
+  .post-title {
+    width: 45rem;
+  }
+
+{% endblock style %}
+
+{% block content %}
+  
+  <a href="{% url 'posts:create' %}" class="btn btn-outline-secondary mb-3">생성하기</a>
+  <table class="table table-hover text-center">
+    <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">제목</th>
+        <th scope="col">작성자</th>
+        <th scope="col">추천</th>
+        <th scope="col">댓글</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for post in posts %}
+        <tr>
+          <th scope="row" class="post-num">{{ post.pk }}</th>
+          <td class="post-title"><a href="{% url 'posts:detail' post.pk %}">{{ post.title }}</a></td>
+          <td><a href="{% url 'accounts:profile' post.user.username %}">{{ post.user }}</a></td>
+          <td>
+            {% if request.user in post.like_users.all %}
+              ❤ {{ post.like_users.all|length }}
+            {% else %}
+              🤍 {{ post.like_users.all|length }}
+            {% endif %}
+          </td>
+          <td>{{ post.comment_set.all|length }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% comment %} 페이지네이션 start! {% endcomment %}
+  <ul class="pagination justify-content-center mt-5">
+
+    {% if posts.number == 1 %}
+      <li class="page-item disabled">
+        <a class="page-link" tabindex="-1" aria-disabled="true" href="#">《</a>
+      </li>
+    {% else %}
+      <li class="page-item">
+        <a class="page-link" href="?page=1">《</a>
+      </li>
+    
+    {% endif %}
+    
+    {% if posts.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ posts.previous_page_number }}">〈</a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" tabindex="-1" aria-disabled="true" href="#">〈</a>
+      </li>
+    {% endif %}
+    {% comment %} 페이지 번호 무한 생성 막는 조건문 (현재 페이지에서 +- 5) {% endcomment %}
+    {% for page_number in posts.paginator.page_range %}
+      {% if page_number >= posts.number|add:-5 and page_number <= posts.number|add:5 %}
+        {% if page_number == posts.number %}
+          <li class="page-item active" aria-current="page">
+            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+          </li>
+        {% else %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+          </li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    
+    {% if posts.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ posts.next_page_number }}">〉</a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" tabindex="-1" aria-disabled="true" href="#">〉</a>
+      </li>
+    {% endif %}
+
+    {% if posts.number == last %}
+      <li class="page-item disabled">
+        <a class="page-link" tabindex="-1" aria-disabled="true" href="#">》</a>
+      </li>
+    {% else %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ last }}">》</a>
+      </li>
+    
+    {% endif %}
+
+    
+  </ul>
+
+
+
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container m-5">
+  {% for post in posts  %}
+    <p>글 번호- <a href="{% url 'posts:detail' post.pk %}">{{ post.pk }}</a>/ 카테고리 - {{ post.category }}</p>
+  {% endfor %}
+</div>
+{% endblock content %}
+{% block c1 %}
+  {{ all_count }}
+{% endblock c1 %}
+{% block c2 %}
+  {{ dev_count }}
+{% endblock c2 %}
+{% block c3 %}
+  {{ cs_count }}
+{% endblock c3 %}
+{% block c4 %}
+  {{ newT_count }}
+{% endblock c4 %}

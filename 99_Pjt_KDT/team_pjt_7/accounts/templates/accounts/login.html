@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container m-5">
+    <h1>로그인</h1>
+    <hr>
+    <form action="{% url 'accounts:login' %}" method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit">
+    </form>
+  </div>
+{% endblock content %}
+{% block c1 %}
+  {{ all_count }}
+{% endblock c1 %}
+{% block c2 %}
+  {{ dev_count }}
+{% endblock c2 %}
+{% block c3 %}
+  {{ cs_count }}
+{% endblock c3 %}
+{% block c4 %}
+  {{ newT_count }}
+{% endblock c4 %}

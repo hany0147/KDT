@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container m-5">
+  <h3>글 번호 - {{ post.pk }}</h3>
+  <h3>글 제목 - {{ post.title }}</h3>
+  <h3>글 내용 - {{ post.content }}</h3>
+  <hr>
+  <h3>카테고리: {{ post.category }}</h3>
+  <div class="d-flex">
+    <a href="{% url 'posts:update' post.pk %}" class="btn btn-info mt-3">글 수정</a>
+    <form action="{% url 'posts:delete' post.pk %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" class="btn btn-danger mt-3 offset-3" value="글 삭제">
+  </div>
+</form>
+</div>
+{% endblock content %}
+{% block c1 %}
+  {{ all_count }}
+{% endblock c1 %}
+{% block c2 %}
+  {{ dev_count }}
+{% endblock c2 %}
+{% block c3 %}
+  {{ cs_count }}
+{% endblock c3 %}
+{% block c4 %}
+  {{ newT_count }}
+{% endblock c4 %}

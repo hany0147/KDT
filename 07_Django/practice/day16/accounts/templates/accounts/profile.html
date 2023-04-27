@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div>
+    <h1>
+      {{ person.username }}님의 프로필 페이지
+    </h1>
+  <div>
+  <br>
+  <div>
+    <p>팔로잉 수: {{ person.followings.all|length }} / 팔로워 수: {{ person.followers.all|length }}</p>
+  </div>
+  <div>
+    {% if request.user != person %}
+      <form action="{% url 'accounts:follow' person.pk %}" method="POST">
+        {% csrf_token %}
+        {% if request.user.is_authenticated %}
+          {% if request.user in person.followers.all %}
+            <input type="submit" value="언팔로우">
+          {% else %}
+            <input type="submit" value="팔로우">
+          {% endif %}
+        {% else %}
+          <input type="submit" value="팔로우" disabled>        
+        {% endif %}
+      </form>
+    {% endif %}
+  </div>
+  <hr>
+  <h1>팔로잉 목록</h1>
+  <div>
+    <ul>
+      {% for p in person.followings.all %}
+      <li class="fs-3">
+        <a class="" href="{% url 'accounts:profile' p.username %}">
+          {{ p.username }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <hr>
+  <h1>팔로워 목록</h1>
+  <div>
+    <ul>
+      {% for p in person.followers.all %}
+      <li class="fs-3">
+        <a class="" href="{% url 'accounts:profile' p.username %}">
+          {{ p.username }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <hr>
+  <a href="{% url 'articles:index' %}">홈으로</a>
+
+{% endblock content %}

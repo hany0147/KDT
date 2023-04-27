@@ -1,0 +1,63 @@
+[
+{
+    "model": "posts.post",
+    "pk": 1,
+    "fields": {
+        "title": "부먹 vs 찍먹",
+        "select1_content": "부먹",
+        "img1": "",
+        "select2_content": "찍먹",
+        "img2": "",
+        "user": 2,
+        "select1_users": [
+            1,
+            2
+        ],
+        "select2_users": []
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 2,
+    "fields": {
+        "title": "밤샘공부 vs 밤샘작업",
+        "select1_content": "공부",
+        "img1": "",
+        "select2_content": "작업",
+        "img2": "",
+        "user": 1,
+        "select1_users": [],
+        "select2_users": []
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 3,
+    "fields": {
+        "title": "비 vs 눈",
+        "select1_content": "비",
+        "img1": "",
+        "select2_content": "눈",
+        "img2": "",
+        "user": 1,
+        "select1_users": [],
+        "select2_users": []
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 4,
+    "fields": {
+        "title": "아이언맨 vs 스파이더맨",
+        "select1_content": "스파이더맨",
+        "img1": "images1/스파이더맨.jfif",
+        "select2_content": "아이언맨",
+        "img2": "images2/아이언맨.jfif",
+        "user": 1,
+        "select1_users": [
+            1
+        ],
+        "select2_users": []
+    }
+}
+]

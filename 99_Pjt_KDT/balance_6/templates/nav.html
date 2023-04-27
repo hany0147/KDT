@@ -1,0 +1,45 @@
+{% load static %}
+
+<nav class="fixed-top navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="{% url 'posts:index' %}">
+      <img id="logo" src="{% static 'logo.png' %}" alt="로고">
+      Balance Game
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'posts:create' %}">만들기</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">랭킹</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            태그
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">음식</a></li>
+            <li><a class="dropdown-item" href="#">생존</a></li>
+            <li><a class="dropdown-item" href="#">상황</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="d-flex">
+        {% if request.user.is_authenticated %}
+          <a class="btn fw-bold text-black" href="{% url 'accounts:profile' user.username %}">{{ user }}님</a>
+          <form action="{% url 'accounts:logout' %}" method="POST">
+            {% csrf_token %}
+            <input class="form-control me-2 btn btn-outline-danger" type="submit" value="로그아웃">
+          </form>
+          {% else %}
+            <a class="btn btn-outline-primary me-2" href="{% url 'accounts:signup' %}">회원가입</a>
+            <a class="btn btn-outline-success" href="{% url 'accounts:login' %}">로그인</a>
+          {% endif %}
+      </div>
+    </div>
+  </div>
+</nav>

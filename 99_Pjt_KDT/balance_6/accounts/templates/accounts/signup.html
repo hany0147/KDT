@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-3"></div>
+    <div id="custom_box_wrapper" class="col-6">
+      <div id="custom_box" class="d-flex flex-column">
+        <div class="row my-3 text-center">
+          <h1>밸런스 게임의 세계로</h1>
+        </div>
+          <form action="{% url 'accounts:signup' %}" method="POST" id="signup-form">
+          {% csrf_token %}
+            {% for field in form %}
+            <div class="row my-3 px-5">
+              <label for="{{ field.id }}"><span class="custom-label">{{ field.label }}</label>
+              {{ field }}
+            </div>
+            {% endfor %}
+            <div class="row my-5 px-5">
+            <input type="submit" class="btn form-control custom_btn" value="회원가입">
+            </div>
+          </form>
+        
+        <div class="row my-3">
+          
+        </div>
+        <div class="row my-3">
+          
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+
+      </div>
+    </div>
+  </div>
+
+<style>
+  .custom-signup-form-field{
+  }
+  .custom-label{
+    color: gray;
+    font-size:0.8rem;
+  }
+  .custom_btn{
+    background-color : lightgray;
+  }
+  
+  #signup-form{
+  }
+  #custom_box_wrapper{
+    width: 50%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+  }
+  #custom_box{
+    padding: 20px;
+    word-break: keep-all;
+    justify-content: center;
+  }
+</style>
+
+
+{% endblock content %}

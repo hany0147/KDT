@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-4"></div>
+    <div id="custom-box-wrapper" class="col-4">
+      <div id="custom-box" class="d-flex flex-column">
+        <div class="row my-3 text-center wordwrap">
+          <h1>밸런스 게임</h1>
+        </div>
+        <div class="row my-3">
+          <form action="{% url 'accounts:login' %}" method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit" class="btn form-control custom-btn" value="로그인">
+          </form>
+        </div>
+        <div class="row my-3 text-center">
+          <p class="custom-text-small">아직도 회원이 아니신가요? 지금바로 <a href="{% url 'accounts:signup' %}">회원가입</a>.</p>
+        </div>
+        <div class="row my-3 custom-box d-flex flex-row justify-content-center">
+        </div>
+      </div>
+    </div>
+      <div class="col-4"></div>
+  </div>
+</div>
+
+
+
+
+<style>
+.custom-text-small{
+  font-size:0.6rem;
+}
+.custom-btn{
+  background-color : lightgray;
+  width: 100%;
+}
+#custom-box-wrapper{
+  width: auto;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+#custom-box{
+  padding: 20px;
+  word-break: keep-all;
+  justify-content: center;
+}
+</style>
+
+{% endblock content %}

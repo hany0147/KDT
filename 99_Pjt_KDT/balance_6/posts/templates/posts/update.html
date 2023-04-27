@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block style %}
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .image-wrap {
+    margin: 0.5rem;
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  #select1, #select2 {
+    width: calc(100% - 1.5rem);
+    height: 8rem;
+    margin: 0.5rem;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .comment-user {
+    font-size: 0.875rem;
+    font-weight: bold;
+  }
+
+  .comment-date {
+    color: #606060;
+    font-size: 0.75rem;
+  }
+
+  .btn-remove {
+    text-decoration: none;
+    padding: 0;
+    font-size: 0.875rem;
+    color: #dc3545;
+    font-weight: bold;
+  }
+
+  .custom-select-form {
+    background-color: lightgray;
+    height: 50%;
+  }
+{% endblock style %}
+{% block content %}
+<div class="container p-5">
+  <h1>수정하기</h1>
+  <form action="{% url 'posts:update' post.pk %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row my-3">
+      <div class="col">{{ form.title }}</div>
+    </div>
+    <div class="row my-3 g-1">
+      <div class="col d-flex flex-column">
+        {{ form.select1_content }}
+        {{ form.img1 }}
+      </div>
+      <div class="col">
+        {{ form.select2_content }}
+        {{ form.img2 }}
+      </div>
+    </div>
+      <input type="submit" class="btn btn-outline-success" value="완료">
+  </form>
+</div>
+{% endblock content %}
+
+
+

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container m-5">
+  <h1>회원정보 수정</h1>
+  <form action="{% url 'accounts:update' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="수정">
+  </form>
+  </div>
+{% endblock content %}
+{% block c1 %}
+  {{ all_count }}
+{% endblock c1 %}
+{% block c2 %}
+  {{ dev_count }}
+{% endblock c2 %}
+{% block c3 %}
+  {{ cs_count }}
+{% endblock c3 %}
+{% block c4 %}
+  {{ newT_count }}
+{% endblock c4 %}
